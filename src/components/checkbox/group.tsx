@@ -54,7 +54,6 @@ export default ({
     <Wrapper>
       {options.map(({ label, hint, id }) => {
         const value = !!values.find((val) => val === id) || false
-
         return (
           <Option key={id} onClick={() => onChange(id)}>
             <Checkbox value={value} />

@@ -1,5 +1,4 @@
 import { AnimateSharedLayout, motion } from 'framer-motion'
-// eslint-disable-next-line no-unused-vars
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
@@ -48,7 +47,7 @@ const Outline = styled(motion.div)<{ secondary?: boolean }>`
   z-index: 2;
 `
 
-interface Option {
+export interface Option {
   label: ReactNode
   id: string
 }

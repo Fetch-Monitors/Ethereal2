@@ -51,6 +51,8 @@ export const InputField = styled.input<{
   height: 40px;
   padding: 0 .1rem;
 `}
+  ${(props) =>
+    props.minimal && props.icon ? `padding-left: 2.5rem;` : ''}
   ${(props) => props.error && `border-color: ${props.theme.error}!important`};
 `
 

@@ -18,11 +18,13 @@ const boxVariants = (color: string) => ({
 export default ({
   value,
   onChange,
+  secondary
 }: {
   value?: boolean
   onChange?: (arg0: boolean) => void
+  secondary?: boolean
 }) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(value || false)
   const pathLength = useMotionValue(0)
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1])
   const themeContext = useContext(ThemeContext)
@@ -38,6 +40,7 @@ export default ({
 
   return (
     <motion.svg
+      initial={isChecked ? 'checked' : 'unchecked'}
       animate={isChecked ? 'checked' : 'unchecked'}
       whileHover="hover"
       whileTap="pressed"
@@ -52,13 +55,13 @@ export default ({
         strokeWidth="30"
         stroke="#d2d6e9"
         fill="#ffffff"
-        variants={boxVariants(themeContext.primary)}
+        variants={boxVariants(secondary? themeContext.secondary : themeContext.primary)}
       />
       <motion.path
         d="M 140 220 l 60 60 l 90 -120"
         fill="transparent"
         strokeWidth="65"
-        stroke={themeContext.primary}
+        stroke={secondary ? themeContext.secondary : themeContext.primary}
         strokeLinecap="round"
         strokeLinejoin="round"
         variants={tickVariants}

@@ -10,7 +10,7 @@ export const Container = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999999999999999999999999999999999999999999999999999999999999999;
+  z-index: 696969696969696969696969696969696969696969696969696969696969696969696969;
   &:focus {
     outline: none;
   }
@@ -36,10 +36,10 @@ export const Wrapper = styled(motion.div)`
     outline: red;
   }
 
-  h5 {
+  & > h5 {
     font-size: 16px;
   }
-  p {
+  & > p {
     display: flex;
     justify-content: center;
     text-align: center;

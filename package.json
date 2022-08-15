@@ -36,6 +36,7 @@
     "@types/styled-components": "^5.1.24",
     "babel-loader": "^8.2.5",
     "eslint-config-lemon": "^0.6.59",
+    "eslint-plugin-prettier": "^4.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5",
