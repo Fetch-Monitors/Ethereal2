@@ -21,13 +21,13 @@
 ## Installation
 
 ```bash
-  yarn add ethereal2
+yarn add ethereal2
 ```
 
 Install with [cotton](https://cotton.js.org/)
 
 ```bash
-  cotton add ethereal2
+cotton add ethereal2
 ```
 
 
@@ -42,25 +42,25 @@ Check out
 Clone the project
 
 ```bash
-  git clone https://github.com/Fetch-Monitors/Ethereal2.git
+git clone https://github.com/Fetch-Monitors/Ethereal2.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd ethereal-ui
+cd ethereal-ui
 ```
 
 Install dependencies
 
 ```bash
-  yarn
+yarn
 ```
 
 Start the Storybook
 
 ```bash
-  yarn storybook
+yarn storybook
 ```
 (Node 16.15.1 recommended for development)
 
