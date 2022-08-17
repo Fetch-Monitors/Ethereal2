@@ -51,16 +51,10 @@ Go to the project directory
 cd ethereal-ui
 ```
 
-Install dependencies
-
-```bash
-yarn
-```
-
 Start the Storybook
 
 ```bash
-yarn storybook
+cotton run storybook
 ```
 (Node 16.15.1 recommended for development)
 
