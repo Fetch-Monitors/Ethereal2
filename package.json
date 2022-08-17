@@ -1,6 +1,6 @@
 {
   "name": "ethereal2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A beautiful, modern, and accessible UI library for React.",
   "module": "dist/esm/index.js",
   "files": [
