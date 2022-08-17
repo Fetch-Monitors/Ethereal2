@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rm -rf /dist && tsc",
     "storybook": "start-storybook -p 8008 --disable-telemetry",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook --no-dll -o docs-build"
   },
   "author": "Maximilian Hollis",
   "license": "MIT",
