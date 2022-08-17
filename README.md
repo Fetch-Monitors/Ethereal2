@@ -8,7 +8,7 @@
 
 ---
 
-# [Ethereal2](https://github.com/MaximilianHollis/Ethereal2) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MaximilianHollis/Ethereal2) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/@maximilianh/ethereal-ui) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
+# [Ethereal2](https://github.com/Fetch-Monitors/Ethereal2.git) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Fetch-Monitors/Ethereal2.git) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/ethereal2) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
 
 
 
@@ -21,20 +21,20 @@
 ## Installation
 
 ```bash
-  yarn add @maximilianh/ethereal-ui
+  yarn add ethereal2
 ```
 
 Install with [cotton](https://cotton.js.org/)
 
 ```bash
-  cotton add @maximilianh/ethereal-ui
+  cotton add ethereal2
 ```
 
 
 ## Documentation
 
 Check out 
-[our Storybook](https://github.com/MaximilianHollis/Ethereal2) for up to date examples and documentation of Ethereal2 components.
+[our Storybook](https://github.com/Fetch-Monitors/Ethereal2) for up to date examples and documentation of Ethereal2 components.
 
 
 ## Run Locally
@@ -42,7 +42,7 @@ Check out
 Clone the project
 
 ```bash
-  git clone https://github.com/Fetch-Monitors/ethereal-ui.git
+  git clone https://github.com/Fetch-Monitors/Ethereal2.git
 ```
 
 Go to the project directory
