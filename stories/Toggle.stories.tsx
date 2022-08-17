@@ -5,6 +5,13 @@ export default {
 	component: Toggle,
 }
 
+export const Default = {
+	args: {
+		onChange: console.log,
+		secondary: false,
+	},
+}
+
 export const On = {
 	args: {
 		value: true,

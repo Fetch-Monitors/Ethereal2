@@ -1,7 +1,7 @@
 import { withThemesProvider } from "themeprovider-storybook";
 
 const theme1 = {
-  primary: '#627ED9',
+  primary: '#4D8BF7',
   secondary: '#fcbe13',
   borderRadius: '5px',
 }

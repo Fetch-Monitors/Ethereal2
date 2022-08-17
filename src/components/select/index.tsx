@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useClickAway } from 'react-use'
 
 import { MdClose, MdSearch } from 'react-icons/md'
+import { AnimatePresence, motion } from 'framer-motion'
 import Input from '../input'
 import Radio from '../radio'
 import CheckboxGroup from '../checkbox/group'
@@ -29,7 +30,7 @@ const Header = styled(Input)<{ isOpen: boolean }>`
 	transition: 0.1s ease-in-out;
 `
 
-const Base = styled.div`
+const Base = styled(motion.div)`
 	position: absolute;
 	z-index: 3;
 	width: 100%;
@@ -95,34 +96,43 @@ export const Select = ({
 				}
 				onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
 			/>
-			{isOpen && (
-				<Base>
-					{options.length > 5 && (
-						<Input
-							minimal
-							icon={<MdSearch />}
-							placeholder="Filter"
-							value={search}
-							onChange={setSearch}
-						/>
-					)}
-					<List>
-						<Radio
-							options={options.filter(
-								(o) =>
-									o.id.toLowerCase().includes(search.toLowerCase()) ||
-									o.label.toLowerCase().includes(search.toLowerCase()),
-							)}
-							value={value || state}
-							onChange={(opt) => {
-								setState(opt)
-								onChange(opt)
-								setIsOpen(false)
-							}}
-						/>
-					</List>
-				</Base>
-			)}
+			<AnimatePresence>
+				{isOpen && (
+					<Base
+						initial={{ opacity: 0, scale: 0.9 }}
+						animate={{ opacity: 1, scale: 1 }}
+						exit={{ opacity: 0, scale: 0.9 }}
+						transition={{
+							duration: 0.1,
+						}}
+					>
+						{options.length > 5 && (
+							<Input
+								minimal
+								icon={<MdSearch />}
+								placeholder="Filter"
+								value={search}
+								onChange={setSearch}
+							/>
+						)}
+						<List>
+							<Radio
+								options={options.filter(
+									(o) =>
+										o.id.toLowerCase().includes(search.toLowerCase()) ||
+										o.label.toLowerCase().includes(search.toLowerCase()),
+								)}
+								value={value || state}
+								onChange={(opt) => {
+									setState(opt)
+									onChange(opt)
+									setIsOpen(false)
+								}}
+							/>
+						</List>
+					</Base>
+				)}
+			</AnimatePresence>
 		</Container>
 	)
 }
@@ -169,45 +179,54 @@ export const MultiSelect = ({
 				}
 				onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
 			/>
-			{isOpen && (
-				<Base>
-					{options.length > 5 && (
-						<Input
-							minimal
-							icon={<MdSearch />}
-							placeholder="Filter"
-							value={search}
-							onChange={setSearch}
-						/>
-					)}
-					<List>
-						<CheckboxGroup
-							options={options.filter(
-								(o) =>
-									o.id.toLowerCase().includes(search.toLowerCase()) ||
-									o.label.toLowerCase().includes(search.toLowerCase()),
-							)}
-							values={state}
-							onChange={(val) => {
-								let newState = state
-								if (state.includes(val)) {
-									newState = newState.filter((opt) => opt !== val)
-								} else {
-									newState = [...newState, val]
-								}
+			<AnimatePresence>
+				{isOpen && (
+					<Base
+						initial={{ opacity: 0, scale: 0.9 }}
+						animate={{ opacity: 1, scale: 1 }}
+						exit={{ opacity: 0, scale: 0.9 }}
+						transition={{
+							duration: 0.1,
+						}}
+					>
+						{options.length > 5 && (
+							<Input
+								minimal
+								icon={<MdSearch />}
+								placeholder="Filter"
+								value={search}
+								onChange={setSearch}
+							/>
+						)}
+						<List>
+							<CheckboxGroup
+								options={options.filter(
+									(o) =>
+										o.id.toLowerCase().includes(search.toLowerCase()) ||
+										o.label.toLowerCase().includes(search.toLowerCase()),
+								)}
+								values={state}
+								onChange={(val) => {
+									let newState = state
+									if (state.includes(val)) {
+										newState = newState.filter((opt) => opt !== val)
+									} else {
+										newState = [...newState, val]
+									}
 
-								console.log('val', val)
-								console.log(newState)
+									console.log('val', val)
+									console.log(newState)
 
-								setState(newState)
-								if (onChange) {
-									onChange(newState)
-								}
-							}}
-						/>
-					</List>
-				</Base>
-			)}
+									setState(newState)
+									if (onChange) {
+										onChange(newState)
+									}
+								}}
+							/>
+						</List>
+					</Base>
+				)}
+			</AnimatePresence>
 		</Container>
 	)
 }

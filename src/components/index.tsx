@@ -3,20 +3,21 @@ export { default as LoaderButton } from './button/loader'
 export { default as IconButton } from './button/icon'
 export { default as Stepper } from './stepper'
 export { default as Toggle } from './toggle'
+export { default as Datagrid } from './datagrid'
 export { default as Dialog } from './dialog'
 export { default as SegmentedControl } from './segmentedControl'
 export {
-  Wrapper as FormBuilder,
-  Top,
-  Option,
-  Label,
-  Segment,
-  Br,
-  Title,
-  Hint,
-  Bottom,
-  Buttons,
-  Tag,
+	Wrapper as FormBuilder,
+	Top,
+	Option,
+	Label,
+	Segment,
+	Br,
+	Title,
+	Hint,
+	Bottom,
+	Buttons,
+	Tag,
 } from './formBuilder/elements'
 export { default as Chip } from './chip'
 export { default as Input } from './input'
