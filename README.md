@@ -34,7 +34,7 @@ cotton add ethereal2
 ## Documentation
 
 Check out 
-[our Storybook](https://github.com/Fetch-Monitors/Ethereal2) for up to date examples and documentation of Ethereal2 components.
+[our Storybook](https://ethereal2.netlify.app/) for up to date examples and documentation of Ethereal2 components.
 
 
 ## Run Locally
