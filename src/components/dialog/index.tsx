@@ -54,10 +54,10 @@ const Dialog = ({
 			ref.current.focus()
 		}
 	}, [])
-	const content = (
+	const Content = (
 		<AnimatePresence>
 			{isOpen && (
-				<>
+				<span>
 					<Container>
 						<Background
 							initial={{
@@ -102,12 +102,12 @@ const Dialog = ({
 							)}
 						</Wrapper>
 					</Container>
-				</>
+				</span>
 			)}
 		</AnimatePresence>
 	)
 	if (typeof window === 'object') {
-		return createPortal(content, document.body)
+		return createPortal(Content, document.body)
 	}
 
 	return null
