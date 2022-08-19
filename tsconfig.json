@@ -14,15 +14,14 @@
     "moduleResolution": "node",
     "isolatedModules": true,
     "jsx": "preserve",
-    "outDir": "dist/esm",
+    "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "types": ["node"],
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "sourceMap": true,
-    
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/components/**/*.tsx"],
+  "exclude": ["node_modules", "stories"]
 }

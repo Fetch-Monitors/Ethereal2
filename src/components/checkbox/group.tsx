@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import Checkbox from '.'
 
@@ -38,6 +38,7 @@ export const Hint = styled.span<{ color?: string }>`
 interface Option {
 	label?: string
 	hint?: string
+	custom?: ReactNode
 	id: string
 }
 
@@ -51,13 +52,13 @@ export default ({
 	onChange: (id: string) => void
 }) => (
 	<Wrapper>
-		{options.map(({ label, hint, id }) => {
+		{options.map(({ label, custom, hint, id }) => {
 			const value = !!values.find((val) => val === id) || false
 			return (
 				<Option key={id} onClick={() => onChange(id)}>
 					<Checkbox value={value} />
 					<span style={{ display: 'flex', flexDirection: 'column' }}>
-						<Label>{label}</Label>
+						<Label>{custom || label}</Label>
 						<Hint>{hint}</Hint>
 					</span>
 				</Option>

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, ReactNode } from 'react'
 import styled from 'styled-components'
 import { useClickAway } from 'react-use'
 
@@ -53,6 +53,7 @@ const List = styled.ul`
 
 export interface Option {
 	label?: string
+	custom?: ReactNode
 	id: string
 }
 
@@ -213,9 +214,6 @@ export const MultiSelect = ({
 									} else {
 										newState = [...newState, val]
 									}
-
-									console.log('val', val)
-									console.log(newState)
 
 									setState(newState)
 									if (onChange) {
