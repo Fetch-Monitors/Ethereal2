@@ -1,4 +1,4 @@
-import { Select } from '../src'
+import { Chip, Select } from '../src'
 
 export default {
 	title: 'Select',
@@ -35,6 +35,17 @@ export const BigList = {
 		onChange: console.log,
 		options: stuff.map((_, i) => ({
 			label: `Option ${i}`,
+			hint: `This is option ${i}`,
+			id: `${i}`,
+		})),
+	},
+}
+
+export const CustomList = {
+	args: {
+		onChange: console.log,
+		options: stuff.map((_, i) => ({
+			custom: <Chip>Custom JSX</Chip>,
 			hint: `This is option ${i}`,
 			id: `${i}`,
 		})),

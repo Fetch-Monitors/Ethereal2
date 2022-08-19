@@ -8,9 +8,9 @@
       [
           "@babel/plugin-transform-react-jsx",
           {
-              "runtime": "classic"
+              "runtime": "automatic"
           },
-          "babel-plugin-styled-components"
+          "@babel-plugin-styled-components"
       ]
   ]
 }
