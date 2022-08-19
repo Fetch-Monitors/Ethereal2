@@ -46,6 +46,7 @@ export const CustomList = {
 		onChange: console.log,
 		options: stuff.map((_, i) => ({
 			custom: <Chip>Custom JSX</Chip>,
+			label: `Option ${i}`,
 			hint: `This is option ${i}`,
 			id: `${i}`,
 		})),
@@ -57,6 +58,19 @@ export const Multi = {
 		onChange: console.log,
 		multi: true,
 		options: stuff.map((_, i) => ({
+			label: `Option ${i}`,
+			hint: `This is option ${i}`,
+			id: `${i}`,
+		})),
+	},
+}
+
+export const CustomMulti = {
+	args: {
+		onChange: console.log,
+		multi: true,
+		options: stuff.map((_, i) => ({
+			custom: <Chip>Custom JSX</Chip>,
 			label: `Option ${i}`,
 			hint: `This is option ${i}`,
 			id: `${i}`,
