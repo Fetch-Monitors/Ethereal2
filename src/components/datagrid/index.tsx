@@ -1,11 +1,11 @@
-import { useRef, useCallback, useEffect, ReactNode } from 'react'
+import { useRef, useCallback, useEffect } from 'react'
 import { useMeasure } from 'react-use'
 import { WindowScroller } from 'react-virtualized'
 import { VariableSizeGrid } from 'react-window'
 
 export interface GridProps {
 	data: unknown[]
-	children: () => ReactNode
+	children: unknown
 	rowHeight: number
 	heightOverride?: number
 	scrollToIndex?: number

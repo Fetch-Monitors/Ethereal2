@@ -15,6 +15,16 @@ export const Default = {
 	},
 }
 
+export const ScrollIsDisabledAutomatically = {
+	args: {
+		isOpen: true,
+		onClose: console.log,
+		children: <div>This is content</div>,
+		title: 'This is a title',
+		custom: false,
+	},
+}
+
 export const CustomContent = {
 	args: {
 		isOpen: true,

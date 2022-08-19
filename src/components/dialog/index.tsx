@@ -53,12 +53,15 @@ const Dialog = ({
 		if (ref.current) {
 			ref.current.focus()
 		}
-
-		document.body.style.overflow = 'hidden'
-		return () => {
-			document.body.style.overflow = 'unset'
-		}
 	}, [])
+
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = 'auto'
+		}
+	}, [isOpen])
 
 	const Content = (
 		<AnimatePresence>
@@ -104,7 +107,9 @@ const Dialog = ({
 										alignItems: 'center',
 									}}
 								>
-									<h5 style={{ marginBottom: 0 }}>{title || 'Information'}</h5>
+									<h5 style={{ marginBottom: 0, fontSize: '20px' }}>
+										{title || 'Information'}
+									</h5>
 									<p>{children}</p>
 									{customButtons || (
 										<Button variant="outlined" onClick={onClose}>
