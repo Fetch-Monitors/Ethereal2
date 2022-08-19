@@ -58,7 +58,7 @@ export default ({
 }) => {
 	const [open, setOpen] = useState(false)
 	return (
-		<>
+		<span>
 			<Wrapper
 				secondary={!!secondary}
 				onClick={() => {
@@ -82,6 +82,6 @@ export default ({
 					{dialog}
 				</Dialog>
 			)}
-		</>
+		</span>
 	)
 }

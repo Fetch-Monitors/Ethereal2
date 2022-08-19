@@ -1,6 +1,6 @@
 {
   "name": "ethereal2",
-  "version": "2.0.14",
+  "version": "2.0.17",
   "description": "A beautiful, modern, and accessible UI library for React.",
   "repository": "https://github.com/Fetch-Monitors/Ethereal2",
   "main": "dist/index.js",
@@ -12,7 +12,8 @@
   "scripts": {
     "build": "NODE_ENV=production microbundle-crl --no-compress --format modern,cjs",
     "storybook": "start-storybook -p 8008 --disable-telemetry",
-    "build-storybook": "build-storybook --no-dll -o docs-build"
+    "build-storybook": "build-storybook --no-dll -o docs-build",
+    "prepublish": "npm run build"
   },
   "author": "Maximilian Hollis",
   "license": "MIT",
