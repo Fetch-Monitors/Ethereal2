@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+/* eslint-disable new-cap */
+import { Fragment, ReactNode } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useCopyToClipboard } from 'react-use'
 import RenderOption from './renderOption'
@@ -84,14 +85,15 @@ export default ({
 		options?.map((option) => {
 			const choice = option.choices?.find((c) => c.id === data[option.id].value)
 			return (
-				<React.Fragment key={option.id}>
+				<Fragment key={option.id}>
 					{RenderOption(option, data, setData, copyToClipboard)}
 					{choice?.options && renderOptions(choice.options)}
-				</React.Fragment>
+				</Fragment>
 			)
 		})
 	const x = clipboard
 	if (x) {
+		// If this is removed, the component breaks
 	}
 
 	return (
@@ -107,13 +109,13 @@ export default ({
 					<h4>{name}</h4>
 					<Br />
 					{segments.map(({ title, options }, segmentI) => (
-						<React.Fragment key={title}>
+						<Fragment key={title}>
 							<Segment>
 								<Title>{title}</Title>
 								{renderOptions(options)}
 							</Segment>
 							{segmentI < segments.length - 1 && <Br />}
-						</React.Fragment>
+						</Fragment>
 					))}
 				</Top>
 			</AnimatePresence>

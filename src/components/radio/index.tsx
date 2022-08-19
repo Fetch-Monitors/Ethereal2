@@ -1,5 +1,5 @@
 import { AnimateSharedLayout } from 'framer-motion'
-import React, { ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { Wrapper, Indicator, Option, Circle, Label, Hint } from './elements'
 
 export interface Option {

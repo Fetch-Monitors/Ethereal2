@@ -1,16 +1,17 @@
 {
   "name": "ethereal2",
-  "version": "2.0.17",
+  "version": "2.0.22",
   "description": "A beautiful, modern, and accessible UI library for React.",
   "repository": "https://github.com/Fetch-Monitors/Ethereal2",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production microbundle-crl --no-compress --format modern,cjs",
+    "build": "NODE_ENV=production microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
     "storybook": "start-storybook -p 8008 --disable-telemetry",
     "build-storybook": "build-storybook --no-dll -o docs-build",
     "prepublish": "npm run build"
@@ -39,7 +40,7 @@
     "@storybook/manager-webpack4": "6.5.10",
     "@storybook/react": "6.5.10",
     "@storybook/testing-library": "0.0.13",
-    "@types/node": "18.6.4",
+    "@types/node": "18.7.6",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
@@ -49,7 +50,7 @@
     "cross-env": "7.0.3",
     "eslint-config-lemon": "0.6.61",
     "eslint-plugin-prettier": "4.2.1",
-    "microbundle-crl": "^0.13.11",
+    "microbundle": "^0.15.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "5.3.5",

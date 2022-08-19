@@ -23,5 +23,5 @@
     "sourceMap": true,
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/components/**/*.tsx"],
-  "exclude": ["node_modules", "stories"]
+  "exclude": ["node_modules", "dist"]
 }

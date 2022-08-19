@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import Button from '../button'

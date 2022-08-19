@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, ReactNode } from 'react'
+import { useRef, useState, useEffect, ReactNode } from 'react'
 import styled from 'styled-components'
 import { useClickAway } from 'react-use'
 
