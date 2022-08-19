@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/cli": "7.18.10",
     "@babel/core": "7.18.10",
-    "@babel/plugin-transform-react-jsx": "^7.18.10",
+    "@babel/plugin-transform-react-jsx": "7.18.10",
     "@babel/preset-env": "7.18.10",
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.18.6",
@@ -50,7 +50,7 @@
     "cross-env": "7.0.3",
     "eslint-config-lemon": "0.6.61",
     "eslint-plugin-prettier": "4.2.1",
-    "microbundle": "^0.15.1",
+    "microbundle": "0.15.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "5.3.5",
