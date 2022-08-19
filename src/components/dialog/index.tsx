@@ -53,7 +53,13 @@ const Dialog = ({
 		if (ref.current) {
 			ref.current.focus()
 		}
+
+		document.body.style.overflow = 'hidden'
+		return () => {
+			document.body.style.overflow = 'unset'
+		}
 	}, [])
+
 	const Content = (
 		<AnimatePresence>
 			{isOpen && (
