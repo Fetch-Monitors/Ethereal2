@@ -1,14 +1,15 @@
 {
   "name": "ethereal2",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A beautiful, modern, and accessible UI library for React.",
+  "repository": "https://github.com/Fetch-Monitors/Ethereal2",
   "module": "dist/esm/index.js",
   "files": [
     "dist",
     "dist/esm/index.d."
   ],
   "scripts": {
-    "build": "rm -rf /dist && tsc",
+    "build": "cross-env BABEL_ENV=production babel --extensions .ts,.tsx ./src -d ./dist",
     "storybook": "start-storybook -p 8008 --disable-telemetry",
     "build-storybook": "build-storybook --no-dll -o docs-build"
   },
@@ -23,6 +24,7 @@
     "recharts": "2.1.13"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
     "@babel/core": "7.18.10",
     "@storybook/addon-actions": "6.5.10",
     "@storybook/addon-essentials": "6.5.10",
@@ -37,6 +39,8 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "babel-loader": "8.2.5",
+    "babel-preset-react-app": "^10.0.1",
+    "cross-env": "^7.0.3",
     "eslint-config-lemon": "0.6.61",
     "eslint-plugin-prettier": "4.2.1",
     "react": "18.2.0",
@@ -52,5 +56,15 @@
   },
   "resolutions": {
     "styled-components": "5.3.5"
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
   }
 }

@@ -8,7 +8,7 @@
 
 ---
 
-# [Ethereal2](https://github.com/Fetch-Monitors/Ethereal2.git) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Fetch-Monitors/Ethereal2.git) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/ethereal2) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
+# [Ethereal2](https://github.com/Fetch-Monitors/Ethereal2.git) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Fetch-Monitors/Ethereal2.git) [![npm version](https://img.shields.io/npm/v/ethereal2.svg?style=flat)](https://www.npmjs.com/package/ethereal2) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
 
 
 
