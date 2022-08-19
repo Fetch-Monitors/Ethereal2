@@ -69,7 +69,7 @@ export const Default = {
 		children: Card,
 		minColumnWidth: 300,
 		maxColumnWidth: 400,
-		rowHeight: 150,
+		rowHeight: 160,
 		data: dummy_data,
 	},
 }
@@ -80,7 +80,7 @@ export const ScrollToIndex = {
 		children: Card,
 		minColumnWidth: 300,
 		maxColumnWidth: 400,
-		rowHeight: 150,
+		rowHeight: 160,
 		data: dummy_data,
 	},
 }
@@ -90,7 +90,7 @@ export const WithoutVirtualizationForDemoOnly = {
 		children: Card,
 		minColumnWidth: 300,
 		maxColumnWidth: 400,
-		rowHeight: 150,
+		rowHeight: 160,
 		heightOverride: 100000,
 		data: dummy_data,
 	},

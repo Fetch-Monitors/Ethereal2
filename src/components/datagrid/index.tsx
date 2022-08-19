@@ -1,11 +1,11 @@
-import { useRef, useCallback, ReactNode, useEffect } from 'react'
+import { useRef, useCallback, useEffect, ReactNode } from 'react'
 import { useMeasure } from 'react-use'
 import { WindowScroller } from 'react-virtualized'
 import { VariableSizeGrid } from 'react-window'
 
 export interface GridProps {
 	data: unknown[]
-	children: ReactNode
+	children: () => ReactNode
 	rowHeight: number
 	heightOverride?: number
 	scrollToIndex?: number
@@ -35,6 +35,7 @@ export default ({
 		[],
 	)
 	const columns = Math.ceil(width / minColumnWidth)
+	console.log(columns, width)
 
 	useEffect(() => {
 		if (scrollToIndex >= data.length - 1) {
@@ -47,6 +48,14 @@ export default ({
 			})
 		}
 	}, [columns, data.length, rowHeight, scrollToIndex])
+
+	useEffect(() => {
+		gridRef.current.resetAfterIndices({
+			columnIndex: 0,
+			rowIndex: 0,
+			shouldForceUpdate: true,
+		})
+	}, [width, columns])
 
 	return (
 		<div

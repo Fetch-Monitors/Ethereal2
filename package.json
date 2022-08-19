@@ -1,6 +1,6 @@
 {
   "name": "ethereal2",
-  "version": "2.0.22",
+  "version": "2.0.23",
   "description": "A beautiful, modern, and accessible UI library for React.",
   "repository": "https://github.com/Fetch-Monitors/Ethereal2",
   "source": "src/index.ts",
