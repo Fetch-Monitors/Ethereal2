@@ -90,7 +90,14 @@ const Dialog = ({
 							{custom ? (
 								children
 							) : (
-								<>
+								<span
+									style={{
+										display: 'flex',
+										flexDirection: 'column',
+										justifyContent: 'center',
+										alignItems: 'center',
+									}}
+								>
 									<h5 style={{ marginBottom: 0 }}>{title || 'Information'}</h5>
 									<p>{children}</p>
 									{customButtons || (
@@ -98,7 +105,7 @@ const Dialog = ({
 											Okay
 										</Button>
 									)}
-								</>
+								</span>
 							)}
 						</Wrapper>
 					</Container>
