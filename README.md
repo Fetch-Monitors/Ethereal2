@@ -64,7 +64,7 @@ yarn storybook
 ```
 (Node 16.15.1 recommended for development)
 
-Telemetry is disabled by default.
+Storybook's telemetry is disabled by default.
 
 
 ## Authors
