@@ -1,7 +1,13 @@
 /* eslint-disable new-cap */
-import { Fragment, ReactNode } from 'react'
+import { Fragment, ReactNode, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useCopyToClipboard } from 'react-use'
+import {
+	MdArrowLeft,
+	MdArrowRight,
+	MdChevronLeft,
+	MdChevronRight,
+} from 'react-icons/md'
 import RenderOption from './renderOption'
 import {
 	Top,
@@ -80,6 +86,7 @@ export default ({
 }) => {
 	const { segments, next, back, name } = state.steps[state.step]
 	const [clipboard, copyToClipboard] = useCopyToClipboard()
+	const [open, setOpen] = useState(true)
 
 	const renderOptions = (options: IOption[]) =>
 		options?.map((option) => {
@@ -96,8 +103,79 @@ export default ({
 		// If this is removed, the component breaks
 	}
 
+	const backward = () => {
+		if (state.step < 1) {
+			state.onExit()
+		} else {
+			back()
+			setWizard({ ...state, step: state.step - 1 })
+		}
+	}
+
+	const forward = async () => {
+		if (state.step + 1 >= state.steps.length) {
+			state.onSubmit(data)
+			setWizard({
+				...state,
+				steps: state.steps.map((s, i) =>
+					i === state.step ? { ...s, progress: 100 } : s,
+				),
+			})
+		} else {
+			const res = await next(data)
+			if (res) {
+				setWizard({
+					...state,
+					step: state.step + 1,
+					steps: state.steps.map((s, i) =>
+						i === state.step ? { ...s, progress: 100 } : s,
+					),
+				})
+			}
+		}
+	}
+
 	return (
-		<FormBuilder>
+		<FormBuilder
+			animate={
+				open
+					? {
+							x: 0,
+					  }
+					: {
+							x: 320,
+					  }
+			}
+			transition={{
+				type: 'spring',
+				stiffness: 900,
+				damping: 200,
+			}}
+		>
+			<div
+				style={{
+					position: 'absolute',
+					left: '-50px',
+					top: '50%',
+					transform: 'translateY("-50%")',
+					zIndex: 100,
+					background: 'white',
+					width: '40px',
+					height: '40px',
+					display: 'flex',
+					justifyContent: 'center',
+					alignContent: 'center',
+					fontSize: '40px',
+					borderRadius: '10px',
+					boxShadow: ' 0 0 10px rgba(0, 0, 0, 0.1)',
+					cursor: 'pointer',
+				}}
+				tabIndex={0}
+				role="button"
+				onClick={() => setOpen(!open)}
+			>
+				{open ? <MdChevronRight /> : <MdChevronLeft />}
+			</div>
 			<AnimatePresence exitBeforeEnter>
 				<Top
 					key={name}
@@ -106,7 +184,29 @@ export default ({
 					exit={{ opacity: 0, x: -20 }}
 					transition={{ duration: 0.25 }}
 				>
-					<h4>{name}</h4>
+					<h4
+						style={{
+							display: 'flex',
+							justifyContent: 'space-between',
+							alignItems: 'center',
+							width: '100%',
+						}}
+					>
+						{name}
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'space-between',
+								alignItems: 'center',
+								width: 'min-fit',
+								fontSize: '30px',
+								cursor: 'pointer',
+							}}
+						>
+							<MdArrowLeft onClick={backward} />
+							<MdArrowRight onClick={forward} />
+						</div>
+					</h4>
 					<Br />
 					{segments.map(({ title, options }, segmentI) => (
 						<Fragment key={title}>
@@ -126,46 +226,11 @@ export default ({
 						.map((_s, i) => ({ progress: state.steps[i].progress / 100 }))}
 				/>
 				<Buttons>
-					<Button
-						secondary
-						variant="outlined"
-						onClick={() => {
-							if (state.step < 1) {
-								state.onExit()
-							} else {
-								back()
-								setWizard({ ...state, step: state.step - 1 })
-							}
-						}}
-					>
+					<Button secondary variant="outlined" onClick={backward}>
 						Back
 					</Button>
 
-					<LoaderButton
-						variant="solid"
-						onClick={async () => {
-							if (state.step + 1 === state.steps.length) {
-								state.onSubmit(data)
-								setWizard({
-									...state,
-									steps: state.steps.map((s, i) =>
-										i === state.step ? { ...s, progress: 100 } : s,
-									),
-								})
-							} else {
-								const res = await next(data)
-								if (res) {
-									setWizard({
-										...state,
-										step: state.step + 1,
-										steps: state.steps.map((s, i) =>
-											i === state.step ? { ...s, progress: 100 } : s,
-										),
-									})
-								}
-							}
-						}}
-					>
+					<LoaderButton variant="solid" onClick={forward}>
 						{state.step + 1 === state.steps.length ? 'Done' : 'Next'}
 					</LoaderButton>
 				</Buttons>

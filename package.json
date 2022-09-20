@@ -1,6 +1,6 @@
 {
   "name": "ethereal2",
-  "version": "2.0.26",
+  "version": "2.1.0",
   "description": "A beautiful, modern, and accessible UI library for React.",
   "repository": "https://github.com/Fetch-Monitors/Ethereal2",
   "source": "src/index.ts",
@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "framer-motion": "7.2.0",
-    "react-icons": "4.4.0",
+    "react-icons": "^4.4.0",
     "react-use": "17.4.0",
     "react-virtualized": "9.22.3",
     "react-window": "1.8.7"

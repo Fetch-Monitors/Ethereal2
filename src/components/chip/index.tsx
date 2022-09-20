@@ -35,6 +35,10 @@ const Help = styled.span<{ icon?: boolean }>`
 	padding-left: ${(props) => (props.icon ? '14px' : '2px')};
 	padding-right: 2px;
 	span {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		display: inline-flex;
 		position: absolute;
 		left: 0;
