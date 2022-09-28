@@ -19,7 +19,7 @@
   "author": "Maximilian Hollis",
   "license": "MIT",
   "dependencies": {
-    "framer-motion": "7.3.6",
+    "framer-motion": "7.4.0",
     "react-icons": "4.4.0",
     "react-use": "17.4.0",
     "react-virtualized": "9.22.3",
