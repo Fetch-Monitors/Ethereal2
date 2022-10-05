@@ -18,7 +18,7 @@ export const Wrapper = styled(motion.div)`
 	background: white;
 	z-index: 3;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	position: relative;
+	position: absolute;
 
 	/* :before {
     content: '';

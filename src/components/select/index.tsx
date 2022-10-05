@@ -118,11 +118,13 @@ export const Select = ({
 						)}
 						<List>
 							<Radio
-								options={options.filter(
-									(o) =>
-										o.id.toLowerCase().includes(search.toLowerCase()) ||
-										o.label.toLowerCase().includes(search.toLowerCase()),
-								)}
+								options={options
+									.filter(
+										(o) =>
+											o.id.toLowerCase().includes(search.toLowerCase()) ||
+											o.label.toLowerCase().includes(search.toLowerCase()),
+									)
+									.filter((_o, i) => i < 50)}
 								value={value || state}
 								onChange={(opt) => {
 									setState(opt)
