@@ -56,10 +56,16 @@ const Dialog = ({
 	}, [])
 
 	useEffect(() => {
+		const documentWidth = document.documentElement.clientWidth
+		const windowWidth = window.innerWidth
+		const scrollBarWidth = windowWidth - documentWidth
+		const { style } = document.body
 		if (isOpen) {
-			document.body.style.overflow = 'hidden'
+			style.paddingRight = `${scrollBarWidth}px`
+			style.overflow = 'hidden'
 		} else {
-			document.body.style.overflow = 'auto'
+			style.overflowY = 'auto'
+			style.paddingRight = '0px'
 		}
 	}, [isOpen])
 
