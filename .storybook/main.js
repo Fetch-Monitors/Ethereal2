@@ -2,7 +2,6 @@ const webpack = require('webpack');
 
 module.exports = {
   stories: [
-    
     '../stories/**/*.stories.mdx',
     '../stories/**/*.stories.@(js|jsx|ts|tsx)',
     '../stories/**/*.stories.tsx',

@@ -1,4 +1,4 @@
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
 
@@ -64,31 +64,29 @@ export default ({
 	options: Option[]
 }) => (
 	<Wrapper secondary={secondary}>
-		<AnimateSharedLayout>
-			{options.map((option, index) => (
-				<Segment
-					key={option.id}
-					secondary={secondary}
-					onClick={() => {
-						onChange(options[index])
-					}}
-				>
-					{option.label}{' '}
-					{option.id === value && (
-						<Outline
-							secondary={secondary}
-							layoutId="outline"
-							transition={{
-								type: 'spring',
-								stiffness: 500,
-								damping: 40,
-							}}
-						>
-							{options[index].label}
-						</Outline>
-					)}
-				</Segment>
-			))}
-		</AnimateSharedLayout>
+		{options.map((option, index) => (
+			<Segment
+				key={option.id}
+				secondary={secondary}
+				onClick={() => {
+					onChange(options[index])
+				}}
+			>
+				{option.label}{' '}
+				{option.id === value && (
+					<Outline
+						secondary={secondary}
+						layoutId="outline"
+						transition={{
+							type: 'spring',
+							stiffness: 500,
+							damping: 40,
+						}}
+					>
+						{options[index].label}
+					</Outline>
+				)}
+			</Segment>
+		))}
 	</Wrapper>
 )

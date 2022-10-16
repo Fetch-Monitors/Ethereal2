@@ -1,8 +1,26 @@
+import { useState } from 'react'
 import { SegmentedControl } from '../src'
+
+const StatefullSegmentedControl = ({
+	options,
+	secondary,
+	value: defaultValue,
+}) => {
+	const [value, setValue] = useState(defaultValue)
+
+	return (
+		<SegmentedControl
+			value={value}
+			options={options}
+			secondary={secondary}
+			onChange={(val) => setValue(val.id)}
+		/>
+	)
+}
 
 export default {
 	title: 'SegmentedControl',
-	component: SegmentedControl,
+	component: StatefullSegmentedControl,
 }
 
 export const Default = {
