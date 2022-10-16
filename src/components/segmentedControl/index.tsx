@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { LayoutGroup, motion } from 'framer-motion'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
 
@@ -63,30 +63,32 @@ export default ({
 	secondary?: boolean
 	options: Option[]
 }) => (
-	<Wrapper layout secondary={secondary}>
-		{options.map((option, index) => (
-			<Segment
-				key={option.id}
-				secondary={secondary}
-				onClick={() => {
-					onChange(options[index])
-				}}
-			>
-				{option.label}{' '}
-				{option.id === value && (
-					<Outline
-						secondary={secondary}
-						layoutId="outline"
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 40,
-						}}
-					>
-						{options[index].label}
-					</Outline>
-				)}
-			</Segment>
-		))}
-	</Wrapper>
+	<LayoutGroup id={Math.random().toString()}>
+		<Wrapper layout secondary={secondary}>
+			{options.map((option, index) => (
+				<Segment
+					key={option.id}
+					secondary={secondary}
+					onClick={() => {
+						onChange(options[index])
+					}}
+				>
+					{option.label}{' '}
+					{option.id === value && (
+						<Outline
+							secondary={secondary}
+							layoutId="outline"
+							transition={{
+								type: 'spring',
+								stiffness: 500,
+								damping: 40,
+							}}
+						>
+							{options[index].label}
+						</Outline>
+					)}
+				</Segment>
+			))}
+		</Wrapper>
+	</LayoutGroup>
 )
