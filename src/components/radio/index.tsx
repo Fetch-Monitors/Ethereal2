@@ -20,7 +20,7 @@ export default ({
 }) => {
 	const [state, setState] = useState('0')
 	return (
-		<Wrapper>
+		<Wrapper layout>
 			{options.map(({ label, custom, hint, id }, i) => {
 				const isSelected =
 					value?.id === undefined ? state === id : value.id === id

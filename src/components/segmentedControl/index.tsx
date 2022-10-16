@@ -63,7 +63,7 @@ export default ({
 	secondary?: boolean
 	options: Option[]
 }) => (
-	<Wrapper secondary={secondary}>
+	<Wrapper layout secondary={secondary}>
 		{options.map((option, index) => (
 			<Segment
 				key={option.id}
