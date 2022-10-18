@@ -12,7 +12,6 @@ const Wrapper = styled.span<{ secondary: boolean }>`
 	border-color: #e0e3eb;
 	border-style: solid;
 	border-width: 1px;
-	z-index: 4;
 	font-size: 11px;
 	margin: 5px 0;
 	:hover {
@@ -41,7 +40,9 @@ const Help = styled.span<{ icon?: boolean }>`
 		justify-content: center;
 		display: inline-flex;
 		position: absolute;
-		left: 0;
+		top: 50%;
+		left: 0%;
+		transform: translate(0%, -50%);
 	}
 `
 
