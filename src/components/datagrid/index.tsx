@@ -38,14 +38,16 @@ export default ({
 	console.log(columns, width)
 
 	useEffect(() => {
-		if (scrollToIndex >= data.length - 1) {
-			window.scrollTo({
-				top: Math.floor(data.length - 1 / columns) * rowHeight,
-			})
-		} else {
-			window.scrollTo({
-				top: Math.floor((scrollToIndex || 1) / columns) * rowHeight,
-			})
+		if (scrollToIndex) {
+			if (scrollToIndex >= data.length - 1) {
+				window.scrollTo({
+					top: Math.floor(data.length - 1 / columns) * rowHeight,
+				})
+			} else {
+				window.scrollTo({
+					top: Math.floor((scrollToIndex || 1) / columns) * rowHeight,
+				})
+			}
 		}
 	}, [columns, data.length, rowHeight, scrollToIndex])
 
