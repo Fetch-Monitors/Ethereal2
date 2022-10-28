@@ -22,13 +22,14 @@ export const Background = styled(motion.div)`
 	background-color: rgba(0, 0, 0, 0.4);
 `
 
-export const Wrapper = styled(motion.div)`
+export const Wrapper = styled(motion.div)<{ width?: string; padding?: string }>`
 	all: unset;
 
 	z-index: 1001;
-	width: 360px;
+	min-width: 360px;
+	width: ${({ width }) => width || '100%'};
 	max-width: 96%;
-	padding: 8px 20px;
+	padding: ${({ padding }) => padding || '8px 20px'};
 	box-sizing: border-box;
 	border-radius: ${(props) => props.theme.borderRadius};
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);

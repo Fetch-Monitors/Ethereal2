@@ -20,6 +20,8 @@ const Dialog = ({
 	customButtons,
 	custom,
 	animation,
+	width,
+	padding,
 }: {
 	isOpen: boolean
 	onClose: VoidFunction
@@ -27,6 +29,8 @@ const Dialog = ({
 	title?: string
 	customButtons?: React.ReactNode
 	custom?: boolean
+	width?: string
+	padding?: string
 	animation?: [
 		{
 			opacity?: number
