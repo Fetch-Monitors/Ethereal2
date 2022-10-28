@@ -99,6 +99,8 @@ const Dialog = ({
 							transition={spring}
 							initial={(animation && animation[0]) || { opacity: 0, y: -100 }}
 							animate={(animation && animation[1]) || { opacity: 1, y: 0 }}
+							width={width}
+							padding={padding}
 							exit={
 								(animation && (animation[2] || animation[0])) || {
 									opacity: 0,
