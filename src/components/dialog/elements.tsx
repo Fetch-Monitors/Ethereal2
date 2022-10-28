@@ -28,7 +28,7 @@ export const Wrapper = styled(motion.div)<{ width?: string; padding?: string }>`
 	z-index: 1001;
 	min-width: 360px;
 	width: ${({ width }) => width || '100%'};
-	max-width: 96%;
+	max-width: ${({ width }) => width || '96%'};
 	padding: ${({ padding }) => padding || '8px 20px'};
 	box-sizing: border-box;
 	border-radius: ${(props) => props.theme.borderRadius};
