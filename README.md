@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-	Beautiful, modern, and accessible UI library for React.
+	Beautiful, modern, accessible UI library for React.
 </div>
 
 ---
