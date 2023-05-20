@@ -23,7 +23,7 @@
     "react-icons": "4.8.0",
     "react-use": "17.4.0",
     "react-virtualized": "9.22.3",
-    "react-window": "1.8.8"
+    "react-window": "1.8.9"
   },
   "devDependencies": {
     "@babel/cli": "7.20.7",
