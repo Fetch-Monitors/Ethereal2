@@ -45,7 +45,7 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "babel-loader": "8.3.0",
-    "babel-plugin-styled-components": "2.1.1",
+    "babel-plugin-styled-components": "2.1.4",
     "babel-preset-react-app": "10.0.1",
     "cross-env": "7.0.3",
     "eslint-config-lemon": "0.6.92",
