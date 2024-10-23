@@ -48,7 +48,7 @@
     "babel-plugin-styled-components": "2.1.1",
     "babel-preset-react-app": "10.0.1",
     "cross-env": "7.0.3",
-    "eslint-config-lemon": "0.6.92",
+    "eslint-config-lemon": "0.6.364",
     "eslint-plugin-prettier": "4.2.1",
     "microbundle": "0.15.1",
     "react": "18.2.0",
